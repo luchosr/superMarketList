@@ -16,6 +16,7 @@ const Modal = props => {
           &times;
         </span>
         <form className="todo-form" onSubmit={props.onSubmit}>
+          <h2>Add Item</h2>
           <input type="text" value={props.value} onChange={props.onChange} />
           <button onClick={closeModal} onSubmit={props.onSubmit}>
             Submit

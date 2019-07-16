@@ -10,7 +10,6 @@
   max-width: 600px;
   padding: 0 15px;
   background-color: #f5f5f5;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,8 +74,8 @@ li {
 /* Modal content */
 .modal-content {
   background-color: white;
-  width: 70%; /* Width in proportion to its parent container*/
-  max-width: 640px; /* Max width where it stops expanding */
+  max-width: 400px; /* Width in proportion to its parent container*/
+  /* Max width where it stops expanding */
   height: 70%; /* Height in proportion to its parent container */
   margin: auto; /* Auto margin according to the element width */
   padding: 10px;
