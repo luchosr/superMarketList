@@ -19,6 +19,7 @@
 }
 h1 {
   margin-bottom: 0.67em;
+  font-size: 1.5em;
 }
 h3 {
   font-size: 1.17em;
@@ -35,10 +36,16 @@ li {
   border-radius: 5px;
   background-color: #fff;
 }
+form {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
 .App__itemAdder {
   color: #fff;
   background-color: #00a8ff;
-  font-size: 1.2em;
+  font-size: 0.8em;
   height: 50px;
   width: 100%;
   cursor: pointer;
@@ -56,12 +63,7 @@ li {
 /* MODAL */
 /* Background effect. It covers the entire site */
 .modal {
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.4
-  ); /* Overlay effect: translucent background: black w/ partial opacity */
+  background-color: rgba(245, 245, 245, 0.6);
   z-index: 1; /* Overlay effect: positioned over other containers */
   width: 100%; /* Full width */
   height: 100%; /* Full height */
@@ -73,25 +75,40 @@ li {
 }
 /* Modal content */
 .modal-content {
-  background-color: white;
+  background-color: #fff;
   max-width: 400px; /* Width in proportion to its parent container*/
   /* Max width where it stops expanding */
-  height: 70%; /* Height in proportion to its parent container */
+  height: 27%; /* Height in proportion to its parent container */
   margin: auto; /* Auto margin according to the element width */
   padding: 10px;
-  border: 1px solid black;
-  border-radius: 20px; /* Optional. Rounds container corners */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 5px; /* Optional. Rounds container corners */
 }
 /* Close button */
-.close {
-  color: #aaaaaa;
-  float: right; /* Positioned to the right of the parent container whichever size it is */
-  font-size: 25px;
-  font-weight: bold;
+
+input {
+  height: 46px;
+  width: 100%;
+  margin: 15px auto;
+  border: 1px solid #f0efef;
+  border-radius: 2px;
 }
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+.buttons button {
+  font-size: 0.8em;
+  width: 170px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.add {
+  background-color: #00a8ff;
+  color: white;
+}
+.close {
+  background-color: #f5f5f5;
 }
