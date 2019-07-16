@@ -25,6 +25,7 @@ const Modal = props => {
               className="add"
               onSubmit={props.onSubmit}
               onClick={closeModal}
+              disabled={!props.value}
             >
               Add
             </button>
