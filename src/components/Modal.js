@@ -15,7 +15,12 @@ const Modal = props => {
       <div className="modal-content" onClick={event => event.stopPropagation()}>
         <form className="todo-form" onSubmit={props.onSubmit}>
           <h2>Add Item</h2>
-          <input type="text" value={props.value} onChange={props.onChange} />
+          <input
+            type="text"
+            value={props.value}
+            onChange={props.onChange}
+            placeholder="  ^__^ "
+          />
           <div className="buttons">
             {" "}
             <button onClick={closeModal} className="close">
@@ -25,6 +30,9 @@ const Modal = props => {
               className="add"
               onSubmit={props.onSubmit}
               onClick={closeModal}
+              style={{
+                backgroundColor: !props.value ? "#7ecff780" : "#00a8ff"
+              }}
             >
               Add
             </button>
