@@ -9,7 +9,6 @@ function App() {
 
   const handleChange = event => {
     setValue(event.target.value);
-    console.log("el valor es " + value);
   };
 
   const handleSubmit = event => {
@@ -17,12 +16,14 @@ function App() {
     const todo = { value };
     if (!value) return;
     setTodos([...todos, todo]);
+    localStorage.setItem("todos", JSON.stringify([...todos, todo]));
     setValue("");
   };
   const handleDelete = event => {
     const id = event.target.id;
     todos.splice(id, 1);
     setTodos([...todos]);
+    localStorage.setItem("todos", JSON.stringify([...todos]));
   };
 
   const selectModal = () => {
@@ -45,7 +46,6 @@ function App() {
           ))}
       </ul>
 
-      {/* <p onClick={selectModal}>Open Modal</p> */}
       <Modal
         displayModal={modal}
         closeModal={selectModal}
@@ -53,9 +53,6 @@ function App() {
         onChange={handleChange}
         onSubmit={handleSubmit}
       />
-      {/* <form className="todo-form" onSubmit={handleSubmit}>
-        <input type="text" value={value} onChange={handleChange} />
-      </form> */}
       <button onClick={selectModal} className="App__itemAdder">
         Add Item
       </button>

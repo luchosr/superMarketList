@@ -7,7 +7,6 @@ const Modal = props => {
 
   const closeModal = event => {
     event.stopPropagation();
-    // event.preventDefault();
     props.closeModal();
   };
   return (
@@ -23,16 +22,13 @@ const Modal = props => {
           />
           <div className="buttons">
             {" "}
-            <button onClick={closeModal} className="close">
+            <button onClick={closeModal} type="button" className="close">
               Close
             </button>
             <button
               className="add"
-              onSubmit={props.onSubmit}
               onClick={closeModal}
-              style={{
-                backgroundColor: !props.value ? "#7ecff780" : "#00a8ff"
-              }}
+              disabled={!props.value}
             >
               Add
             </button>
