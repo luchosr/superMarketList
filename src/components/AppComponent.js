@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Modal from "./components/Modal";
+import Modal from "./Modal";
 import "./App.css";
 // import Api from "./components/Api";
 
-function App() {
+function AppComponent() {
   const [value, setValue] = useState("");
   const [todos, setTodos] = useState([]);
   const [modal, setModal] = useState(false);
@@ -87,4 +87,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppComponent;
