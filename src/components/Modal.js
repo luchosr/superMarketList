@@ -17,6 +17,7 @@ const Modal = props => {
           <input
             type="text"
             value={props.value}
+            id={props.value}
             onChange={props.onChange}
             placeholder="  ^__^ "
           />
