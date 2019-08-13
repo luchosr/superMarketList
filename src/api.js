@@ -11,7 +11,3 @@ export default {
     }
   }
 };
-
-/*
-agregar un metodo set con delay para setear el local storage.
-*/
