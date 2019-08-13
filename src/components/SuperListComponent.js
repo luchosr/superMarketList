@@ -1,20 +1,26 @@
 import React from "react";
 import Modal from "./Modal";
 import "../App.css";
-// import Api from "./components/Api";
 
-function SuperListComponent(props) {
+function SuperListComponent({
+  todos,
+  handleDelete,
+  modal,
+  selectModal,
+  value,
+  handleChange,
+  handleSubmit
+}) {
   return (
-    <div className="App">
-      <h1>Supermarket list</h1>
-      <h3>{props.todos.length} item(s)</h3>
-      <ul>
-        {props.todos &&
-          props.todos.map((todo, i) => (
-            <li className="todo-block" key={todo.value}>
+    <div className="app__block">
+      <h1 className="app__title">Supermarket list</h1>
+      <h3 className="app__title__items">{todos.length} item(s)</h3>
+      <ul className="app__list">
+        {todos &&
+          todos.map((todo, i) => (
+            <li className="todo__block" key={todo.value}>
               {todo.value}
-              <i id={i} onClick={props.handleDelete}>
-                {" "}
+              <i className="todo__block__delete" id={i} onClick={handleDelete}>
                 delete
               </i>
             </li>
@@ -22,14 +28,14 @@ function SuperListComponent(props) {
       </ul>
 
       <Modal
-        displayModal={props.modal}
-        closeModal={props.selectModal}
-        value={props.value}
-        modal={props.modal}
-        onChange={props.handleChange}
-        onSubmit={props.handleSubmit}
+        displayModal={modal}
+        closeModal={selectModal}
+        value={value}
+        modal={modal}
+        onChange={handleChange}
+        onSubmit={handleSubmit}
       />
-      <button onClick={props.selectModal} className="App__itemAdder">
+      <button onClick={selectModal} className="app__itemAdder" autoFocus>
         Add Item
       </button>
     </div>

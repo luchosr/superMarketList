@@ -26,6 +26,7 @@ function SuperListContainer() {
     const todo = { id: id, value: value };
     if (!value) return;
     setTodos([...todos, todo]);
+
     localStorage.setItem("todos", JSON.stringify([...todos, todo]));
     setValue("");
   };
@@ -41,7 +42,7 @@ function SuperListContainer() {
     setModal(!modal);
   };
   if (status === "pending") {
-    return "...loading";
+    return "... loading";
   }
   return (
     <SuperListComponent

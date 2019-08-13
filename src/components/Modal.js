@@ -9,25 +9,38 @@ const Modal = props => {
     event.stopPropagation();
     props.closeModal();
   };
+  const focusInput = input => {
+    if (input) {
+      input.focus();
+    }
+  };
+
   return (
     <div className="modal" onClick={closeModal} style={divStyle}>
-      <div className="modal-content" onClick={event => event.stopPropagation()}>
-        <form className="todo-form" onSubmit={props.onSubmit}>
+      <div
+        className="modal__content"
+        onClick={event => event.stopPropagation()}
+      >
+        <form className="modal__form" onSubmit={props.onSubmit}>
           <h2>Add Item</h2>
           <input
+            className="modal__input"
+            ref={focusInput}
             type="text"
             value={props.value}
             id={props.value}
             onChange={props.onChange}
-            placeholder="  ^__^ "
           />
-          <div className="buttons">
-            {" "}
-            <button onClick={closeModal} type="button" className="close">
+          <div className="modal__buttons">
+            <button
+              onClick={closeModal}
+              type="button"
+              className="modal__buttons__close"
+            >
               Close
             </button>
             <button
-              className="add"
+              className="modal__buttons__add"
               onClick={closeModal}
               disabled={!props.value}
             >
