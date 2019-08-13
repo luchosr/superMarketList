@@ -8,8 +8,9 @@ function SuperListContainer() {
   const [modal, setModal] = useState(false);
   const [id, setId] = useState("");
   const [status, setStatus] = useState("pending");
-
-  localStorage.setItem("todos", JSON.stringify([...todos]));
+  if (localStorage.getItem("todos") === null) {
+    localStorage.setItem("todos", JSON.stringify([...todos]));
+  }
 
   useEffect(() => {
     api.todos
