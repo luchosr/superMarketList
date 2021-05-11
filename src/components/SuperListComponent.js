@@ -9,7 +9,7 @@ function SuperListComponent({
   selectModal,
   value,
   handleChange,
-  handleSubmit
+  handleSubmit,
 }) {
   return (
     <div className="app__block">

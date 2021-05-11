@@ -1,15 +1,15 @@
 import React from "react";
 
-const Modal = props => {
+const Modal = (props) => {
   const divStyle = {
-    display: props.displayModal ? "block" : "none"
+    display: props.displayModal ? "block" : "none",
   };
 
-  const closeModal = event => {
+  const closeModal = (event) => {
     event.stopPropagation();
     props.closeModal();
   };
-  const focusInput = input => {
+  const focusInput = (input) => {
     if (input) {
       input.focus();
     }
@@ -19,7 +19,7 @@ const Modal = props => {
     <div className="modal" onClick={closeModal} style={divStyle}>
       <div
         className="modal__content"
-        onClick={event => event.stopPropagation()}
+        onClick={(event) => event.stopPropagation()}
       >
         <form className="modal__form" onSubmit={props.onSubmit}>
           <h2>Add Item</h2>

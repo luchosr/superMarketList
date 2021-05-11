@@ -19,12 +19,12 @@ function SuperListContainer() {
       .then(() => setStatus("resolved"));
   }, []);
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setValue(event.target.value);
     setId(event.target.id);
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const todo = { id: id, value: value };
     if (!value) return;
@@ -34,7 +34,7 @@ function SuperListContainer() {
     setValue("");
   };
 
-  const handleDelete = event => {
+  const handleDelete = (event) => {
     const id = event.target.id;
     todos.splice(id, 1);
     setTodos([...todos]);
